@@ -1,12 +1,12 @@
-CKEDITOR.plugins.add( 'graphicsupload', {
-    icons: 'graphicsupload',
+CKEDITOR.plugins.add( 'graphicupload', {
+    icons: 'graphicupload',
     init: function( editor ) {
         var randGUFrmId = '_' + Math.random().toString(36).substr(2, 14);
         var htmlGU="<form enctype='multipart/form-data' method='post' action='/uploads/upload.php' id='frm_"+randGUFrmId+"' style='display:none;'>";
             htmlGU+="<input type='file' name='upload' id='btn_file_"+randGUFrmId+"'>";
             htmlGU+="</form>";
         $('body').prepend(htmlGU);
-        editor.addCommand('graphicsupload', {
+        editor.addCommand('graphicupload', {
         exec: function (editor) {
             console.log('fired');
             $('#btn_file_'+randGUFrmId).click();
@@ -35,9 +35,9 @@ CKEDITOR.plugins.add( 'graphicsupload', {
             // clear file field
        })
 
-        editor.ui.addButton( 'graphicsupload', {
+        editor.ui.addButton( 'graphicupload', {
             label: 'Insert Abbreviation',
-            command: 'graphicsupload',
+            command: 'graphicupload',
             toolbar: 'insert'
         });
     }
